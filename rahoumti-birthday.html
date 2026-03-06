@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Birthday Rahoumti</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@600;700&family=Cairo:wght@300;400;600&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#F5C842;--rose:#FF6B9D;--violet:#8B5CF6;--pink:#FFB3D1;--cream:#FFF8F0;--deep-rose:#E91E8C}
+body{background:var(--cream);overflow-x:hidden;font-family:'Playfair Display',serif}
+#fw{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
+/* رهومتي  */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a0533,#2d1057 40%,#4a0e8f 70%,#1a0533);position:relative;overflow:hidden;padding:2rem 1rem}
+.stars{position:absolute;inset:0;overflow:hidden}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d,2s) infinite alternate}
+@keyframes twinkle{0%{opacity:.2;transform:scale(1)}100%{opacity:1;transform:scale(1.5)}}
+.htitle{font-family:'Dancing Script',cursive;font-size:clamp(2.8rem,9vw,6.5rem);background:linear-gradient(135deg,#F5C842,#FF6B9D,#8B5CF6,#F5C842);background-size:300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:sh 4s linear infinite;text-align:center;line-height:1.2;z-index:2;position:relative}
+.hsub{color:rgba(255,255,255,.8);font-size:clamp(1rem,3vw,1.5rem);margin-top:1rem;text-align:center;font-style:italic;z-index:2;position:relative}
+@keyframes sh{0%{background-position:0%}100%{background-position:300%}}
+#cake{z-index:2;margin:1.5rem 0;transform:translateY(-250px);opacity:0}
+.fl{animation:flicker .35s ease-in-out infinite alternate}
+@keyframes flicker{0%{opacity:1;transform:scaleY(1)}100%{opacity:.8;transform:scaleY(1.25)}}
+/* رهومتي  */
+#ctr{padding:4rem 1rem;text-align:center;background:linear-gradient(180deg,#1a0533,#2d1b69 50%,#1e1b4b)}
+.clabel{font-family:'Dancing Script',cursive;font-size:clamp(1.4rem,4vw,2.5rem);color:var(--gold);margin-bottom:2rem}
+.cgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;max-width:750px;margin:0 auto}
+.cunit{background:rgba(255,255,255,.05);border:1px solid rgba(245,200,66,.3);border-radius:16px;padding:1rem 1.3rem;min-width:90px;backdrop-filter:blur(8px);box-shadow:0 8px 32px rgba(139,92,246,.2);transition:transform .2s}
+.cunit:hover{transform:translateY(-5px) scale(1.06)}
+.cnum{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;background:linear-gradient(135deg,#F5C842,#FF6B9D);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1}
+.ctag{color:rgba(255,255,255,.55);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem;font-family:'Cairo',sans-serif}
+/* رهومتي  */
+#stk{padding:3rem 1rem;min-height:65vh;position:relative;overflow:hidden;background:linear-gradient(180deg,#1e1b4b,#fce4ec)}
+.stk-hd{text-align:center;padding-bottom:2rem;position:relative;z-index:10}
+.stkr{position:absolute;font-size:clamp(2.5rem,6vw,4.5rem);cursor:pointer;user-select:none;animation:bob var(--bd,3s) ease-in-out infinite;filter:drop-shadow(0 4px 10px rgba(0,0,0,.2));transition:transform .25s;z-index:5}
+.stkr:hover{transform:scale(1.5) rotate(15deg)!important}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-14px) rotate(var(--r2,4deg))}}
+/* 444155566688833188 */
+#gft{padding:5rem 1rem;text-align:center;background:linear-gradient(180deg,#fce4ec,#f3e5f5,#e8eaf6);position:relative}
+.gtitle{font-family:'Dancing Script',cursive;font-size:clamp(2rem,5vw,3rem);color:var(--violet);margin-bottom:.8rem}
+#gbox{width:190px;height:190px;margin:0 auto;cursor:pointer;filter:drop-shadow(0 20px 45px rgba(139,92,246,.4));transition:transform .3s}
+#gbox:hover{transform:scale(1.1) rotate(-4deg)}
+/* رهومتي  */
+#crd{display:none;max-width:700px;margin:3rem auto 0;opacity:0;transform:scale(.8)}
+#crd.on{display:block}
+.couter{padding:4px;border-radius:24px;background:linear-gradient(135deg,#F5C842,#FF6B9D,#8B5CF6,#A7F3D0,#F5C842);background-size:300%;animation:sh 4s linear infinite;box-shadow:0 20px 80px rgba(139,92,246,.4)}
+.cinner{background:linear-gradient(145deg,#fff9fe,#fdf0ff,#fff5f8);border-radius:21px;padding:2.5rem 2rem}
+.csec{margin-bottom:2.5rem}
+.badge{display:inline-block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.2rem .8rem;border-radius:100px;margin-bottom:1rem;font-family:'Cairo',sans-serif;background:linear-gradient(135deg,var(--violet),var(--deep-rose));color:#fff}
+.cen{font-family:'Playfair Display',serif;font-size:clamp(.9rem,2.5vw,1.1rem);line-height:1.9;color:#3d1a5e;font-style:italic}
+.car{font-family:'Amiri',serif;font-size:clamp(1rem,2.5vw,1.2rem);line-height:2.3;color:#2d1057;direction:rtl;text-align:right}
+.ces{font-family:'Dancing Script',cursive;font-size:clamp(1.2rem,3vw,1.6rem);color:var(--deep-rose);text-align:center;line-height:1.9}
+.cdiv{height:2px;background:linear-gradient(90deg,transparent,var(--rose),transparent);margin:1.5rem 0;border:none}
+.cname{font-family:'Dancing Script',cursive;font-size:clamp(1.6rem,4vw,2.6rem);background:linear-gradient(135deg,#F5C842,#FF6B9D,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;text-align:center;margin-bottom:1rem}
+.poem{background:linear-gradient(135deg,rgba(139,92,246,.07),rgba(255,107,157,.07));border-right:4px solid var(--violet);padding:1rem 1.2rem;border-radius:12px;font-family:'Amiri',serif;font-size:1.1rem;line-height:2.3;color:#2d1057;direction:rtl;text-align:right;margin-top:1.5rem}
+/* رهومتي  */
+footer{text-align:center;padding:2.5rem 1rem;background:linear-gradient(135deg,#1a0533,#2d1b69);color:rgba(255,255,255,.6);font-family:'Cairo',sans-serif}
+.hb{display:inline-block;animation:hbeat 1s ease-in-out infinite}
+@keyframes hbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
+.fheart{position:fixed;pointer-events:none;font-size:1.5rem;z-index:10000;animation:fup 3s ease-out forwards}
+@keyframes fup{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-280px)}}
+.fu{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+.fu.vis{opacity:1;transform:translateY(0)}
+@media(max-width:480px){.cunit,.cunit{min-width:72px;padding:.75rem}.cinner{padding:1.5rem 1rem}#gbox{width:145px;height:145px}}
+</style>
+</head>
+<body>
+<canvas id="fw"></canvas>
+
+<section id="hero">
+  <div class="stars" id="stars"></div>
+  <div id="cake">
+    <svg width="155" height="198" viewBox="0 0 155 198" xmlns="http://www.w3.org/2000/svg">
+      <rect x="52" y="58" width="8" height="26" rx="4" fill="#FFB3D1"/>
+      <ellipse cx="56" cy="57" rx="5" ry="8" fill="#F5C842" class="fl"/>
+      <rect x="72" y="52" width="8" height="32" rx="4" fill="#A7F3D0"/>
+      <ellipse cx="76" cy="51" rx="5" ry="8" fill="#FF6B9D" class="fl" style="animation-delay:.15s"/>
+      <rect x="94" y="58" width="8" height="26" rx="4" fill="#8B5CF6"/>
+      <ellipse cx="98" cy="57" rx="5" ry="8" fill="#F5C842" class="fl" style="animation-delay:.3s"/>
+      <ellipse cx="77" cy="84" rx="41" ry="11" fill="#FF8FAB"/>
+      <rect x="36" y="84" width="82" height="29" rx="4" fill="#FFB3D1"/>
+      <ellipse cx="77" cy="113" rx="41" ry="11" fill="#FF8FAB"/>
+      <path d="M43,88 Q48,97 53,88 Q58,97 63,88 Q68,97 73,88 Q78,97 83,88 Q88,97 93,88 Q98,97 103,88 Q108,97 112,88" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="77" cy="113" rx="51" ry="13" fill="#E91E8C"/>
+      <rect x="26" y="113" width="102" height="33" rx="4" fill="#FF6B9D"/>
+      <ellipse cx="77" cy="146" rx="51" ry="13" fill="#E91E8C"/>
+      <path d="M33,117 Q40,128 47,117 Q54,128 61,117 Q68,128 75,117 Q82,128 89,117 Q96,128 103,117 Q110,128 117,117 Q124,128 121,117" stroke="#FFE4EF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="77" cy="146" rx="60" ry="14" fill="#8B5CF6"/>
+      <rect x="17" y="146" width="120" height="36" rx="4" fill="#A855F7"/>
+      <ellipse cx="77" cy="182" rx="60" ry="14" fill="#7C3AED"/>
+      <path d="M24,150 Q32,163 40,150 Q48,163 56,150 Q64,163 72,150 Q80,163 88,150 Q96,163 104,150 Q112,163 120,150 Q128,163 130,150" stroke="#D8B4FE" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="53" cy="132" r="5" fill="#F5C842"/><circle cx="77" cy="136" r="5" fill="#A7F3D0"/><circle cx="101" cy="132" r="5" fill="#FF8FAB"/>
+      <circle cx="40" cy="164" r="5" fill="#F5C842"/><circle cx="63" cy="168" r="5" fill="#FFB3D1"/><circle cx="91" cy="168" r="5" fill="#A7F3D0"/><circle cx="114" cy="164" r="5" fill="#FF6B9D"/>
+    </svg>
+  </div>
+  <h1 class="htitle">Happy Birthday<br/>رهومتي </h1>
+  <p class="hsub">With all my heart, forever yours </p>
+</section>
+
+<section id="ctr" class="fu">
+  <div class="clabel">Time Since The World Became Brighter</div>
+  <div class="cgrid">
+    <div class="cunit"><span class="cnum" id="cy">0</span><div class="ctag">Years</div></div>
+    <div class="cunit"><span class="cnum" id="cm">0</span><div class="ctag">Months</div></div>
+    <div class="cunit"><span class="cnum" id="cd">0</span><div class="ctag">Days</div></div>
+    <div class="cunit"><span class="cnum" id="ch">0</span><div class="ctag">Hours</div></div>
+    <div class="cunit"><span class="cnum" id="cmi">0</span><div class="ctag">Minutes</div></div>
+    <div class="cunit"><span class="cnum" id="cs">0</span><div class="ctag">Seconds</div></div>
+  </div>
+  <p style="color:rgba(255,255,255,.35);font-size:.8rem;margin-top:1.5rem;font-family:'Cairo',sans-serif">Since Wednesday, March 12, 2008 at 17:20 🌟</p>
+</section>
+
+<section id="stk" class="fu">
+  <div class="stk-hd">
+    <h2 style="font-family:'Dancing Script',cursive;font-size:clamp(2rem,5vw,3rem);color:#f5c842"></h2>
+    <p style="color:#f5c842;font-size:1rem;font-family:'Cairo',sans-serif;margin-top:.5rem">Click !</p>
+  </div>
+</section>
+
+<section id="gft" class="fu">
+  <h2 class="gtitle"> A Gift From My Heart</h2>
+  <p style="color:#7c3aed;font-family:'Cairo',sans-serif;margin-bottom:2rem">Open your surprise ✨</p>
+  <div id="gbox" onclick="openGift()">
+    <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#A855F7"/><stop offset="100%" stop-color="#6D28D9"/></linearGradient>
+        <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#4C1D95"/></linearGradient>
+      </defs>
+      <rect x="20" y="90" width="140" height="80" rx="8" fill="url(#bg)"/>
+      <rect x="15" y="68" width="150" height="32" rx="8" fill="url(#lg)"/>
+      <rect x="82" y="68" width="16" height="102" rx="4" fill="#F5C842"/>
+      <rect x="15" y="78" width="150" height="12" rx="4" fill="#F5C842"/>
+      <ellipse cx="90" cy="68" rx="26" ry="15" fill="#FF6B9D" transform="rotate(-22,90,68)"/>
+      <ellipse cx="90" cy="68" rx="26" ry="15" fill="#FF6B9D" transform="rotate(22,90,68)"/>
+      <circle cx="90" cy="68" r="11" fill="#F5C842"/>
+      <ellipse cx="55" cy="112" rx="14" ry="6" fill="rgba(255,255,255,.18)" transform="rotate(-30,55,112)"/>
+    </svg>
+  </div>
+
+  <div id="crd">
+    <div class="couter">
+      <div class="cinner">
+        <span class="cname">Happy Birthday, رهومتي </span>
+        <hr class="cdiv"/>
+
+        <div class="csec">
+          <p class="cen">Happy birthday my sweet, gorgeous, greatest, beautiful, prettiest <strong>رهومتي</strong> in my world. I don't know what I should say, so I'll write everything in my mind right now. I cannot imagine life without you — I don't know how I can live without you. I think about you every day, every time, every single second. I'll always choose you and be with you forever. I want you, I need you. You are my soulmate, my world, my universe, my everything. We complement each other. You're the one who makes me happy, the one I need most. I wish I could be next to you every second for the rest of my life... <em>our</em> life. ✨</p>
+        </div>
+        <hr class="cdiv"/>
+
+        <div class="csec">
+          <div style="clear:both;margin-top:.5rem"></div>
+          <p class="car">يوم ميلاد سعيد لحياتي وعيوني وروحي وعالمي وكلشيئ، وأهم حاجة لرهومتي، رهومتي خاصتي وحدي.<br/><br/>اااااا درك كبرتي ومبقيتيش قاصر، لايهم — غادي تبقاي القاصر والكبير والعجوز والطفلة في نظري مهما كان عمرك. لايهم كم سيكون الرقم، أنا من سيحدد من ستكونين في نظري. أنتِ كل شيء أملكه وكل ما أريد أن أملكه. أرى الدنيا في عيناكِ ولا أعرف كيف أعبر عما أرى.<br/><br/>راني غير نقول واش راه في مخي. المهم أنتِ تعرفين مكانتك عندي. كل يوم نتخيلك معي ونشوف النجوم وأنتِ في حضني. متأكد أنه سيأتي يوم ذلك.<br/><br/>أعلم أن هدية اليوم غير كافية ولا أعرف ما يمكنني تقديمه، لكن القادم سيكون أفضل ما دام سنبقى للأبد. لديّ فرصة كل سنة أن أُهديكِ العالم، لأنكِ مَن أهديتني العالم.<br/><br/>تغيّرتُ كثيراً منذ أن عرفتُك. بدأتُ أحب الحياة، وأنتِ الحياة. أصبح كل همّي متى سنكون معاً ونبقى معاً.</p>
+          <div class="poem">لو كنتُ أعرف فوق الشكر منزلةً<br/>أوفى من الشكر عند الله في الثمنِ<br/>أَخلَصتُها لكِ من قلبي مُهذَّبةً<br/>حَذواً على مِثلِ ما أوليتِ من حُسنِ</div>
+          <p class="car" style="font-size:.9rem;color:#7c3aed;margin-top:1rem">طبعاً ليست من كتاباتي، ولكن تمنّيتُ لو كان لديّ قليل من الوقت لتعلّمت الشعر كي أقدمه لكِ. أعرف أنكِ تحبين الشعر — سأحاول المرة القادمة بلساني وقلمي. كلامي القليل لا يعبّر عما تستحقين، وما أملك سوى كلامي، ولا تلوميني عن قلّة حيلتي.</p>
+        </div>
+        <hr class="cdiv"/>
+
+        <div class="csec">
+          <p class="ces">Feliz día de cumpleaños mío.<br/>Feliz día de cumpleaños mi niña,<br/>eres la luz que ilumina mi vida. </p>
+        </div>
+
+        <div style="text-align:center;margin-top:1.5rem;font-size:2rem"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><span class="hb"></span> for <span style="font-family:'Dancing Script',cursive;font-size:1.4rem;color:#FF6B9D">رهومتي</span></p>
+  <p style="margin-top:.5rem;font-size:.75rem">Forever &amp; Always 🌟</p>
+</footer>
+
+<script>
+// رهومتي 
+const sf=document.getElementById('stars');
+for(let i=0;i<130;i++){const s=document.createElement('div');s.className='star';const z=Math.random()*3+1;s.style.cssText=`width:${z}px;height:${z}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${Math.random()*3+1}s;animation-delay:${Math.random()*4}s`;sf.appendChild(s)}
+
+// رهومتي 
+const cv=document.getElementById('fw');const cx=cv.getContext('2d');
+function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener('resize',rs);
+const pal=['#F5C842','#FF6B9D','#8B5CF6','#A7F3D0','#FFB3D1','#fff','#E91E8C','#D8B4FE'];
+class P{constructor(x,y,c){this.x=x;this.y=y;this.c=c;const a=Math.random()*Math.PI*2,sp=Math.random()*8+2;this.vx=Math.cos(a)*sp;this.vy=Math.sin(a)*sp;this.l=1;this.dc=Math.random()*.02+.01;this.r=Math.random()*3+1}u(){this.x+=this.vx;this.y+=this.vy;this.vy+=.1;this.l-=this.dc;this.vx*=.98;this.vy*=.98}d(){cx.save();cx.globalAlpha=this.l;cx.fillStyle=this.c;cx.beginPath();cx.arc(this.x,this.y,this.r,0,Math.PI*2);cx.fill();cx.restore()}}
+let ps=[];
+function ex(x,y){const c=pal[~~(Math.random()*pal.length)];for(let i=0;i<80;i++)ps.push(new P(x,y,c))}
+function lfw(){ex(Math.random()*cv.width,Math.random()*cv.height*.6)}
+let fi;function sfw(){fi=setInterval(lfw,350);setTimeout(()=>clearInterval(fi),5500)}
+(function anim(){requestAnimationFrame(anim);cx.clearRect(0,0,cv.width,cv.height);ps=ps.filter(p=>p.l>0);ps.forEach(p=>{p.u();p.d()})})();
+
+// رهومتي 
+addEventListener('load',()=>{
+  sfw();
+  gsap.to('#cake',{y:0,opacity:1,duration:1.3,delay:.4,ease:'bounce.out'});
+  gsap.from('.htitle',{opacity:0,y:70,duration:1.2,delay:1.1,ease:'power3.out'});
+  gsap.from('.hsub',{opacity:0,y:30,duration:1,delay:1.8,ease:'power2.out'});
+  for(let i=0;i<35;i++)setTimeout(()=>ex(Math.random()*innerWidth,Math.random()*innerHeight*.5),i*120);
+});
+
+// رهومتي 
+function uc(){
+  const b=new Date('2008-03-12T17:20:00'),n=new Date(),df=n-b;
+  const td=Math.floor(df/86400000);
+  document.getElementById('cy').textContent=String(Math.floor(td/365.25)).padStart(2,'0');
+  document.getElementById('cm').textContent=String(Math.floor((td%365.25)/30.44)).padStart(2,'0');
+  document.getElementById('cd').textContent=String(Math.floor((td%365.25)%30.44)).padStart(2,'0');
+  document.getElementById('ch').textContent=String(Math.floor((df%86400000)/3600000)).padStart(2,'0');
+  document.getElementById('cmi').textContent=String(Math.floor((df%3600000)/60000)).padStart(2,'0');
+  document.getElementById('cs').textContent=String(Math.floor((df%60000)/1000)).padStart(2,'0');
+}
+uc();setInterval(uc,1000);
+
+// رهومتي 
+const se = document.getElementById('stk');
+
+
+const sd = [
+  { e: 'stickers/18.png' },
+  { e: 'stickers/8.png' },
+  { e: 'stickers/1.png' },
+  { e: 'stickers/13.png' },
+  { e: 'stickers/9.png' },
+  { e: 'stickers/4.png' },
+  { e: 'stickers/5.png' },
+  { e: 'stickers/11.png' },
+  { e: 'stickers/14.png' },
+  { e: 'stickers/21.png' },
+  { e: 'stickers/15.png' },
+  { e: 'stickers/16.png' },
+  { e: 'stickers/7.png' },
+  { e: 'stickers/22.png' },
+  { e: 'stickers/6.png' },
+];
+
+const sp = [
+  {t:'12%',l:'4%'},{t:'8%',l:'78%'},{t:'32%',l:'14%'},{t:'28%',r:'9%'},
+  {t:'52%',l:'28%'},{t:'58%',r:'18%'},{t:'72%',l:'7%'},{t:'68%',l:'62%'},
+  {t:'18%',l:'43%'},{t:'42%',l:'72%'},{t:'78%',l:'38%'},{t:'48%',l:'48%'},
+  {t:'12%',l:'58%'},{t:'38%',l:'3%'},{t:'62%',l:'42%'},{t:'82%',r:'4%'}
+];
+
+sd.forEach((s, i) => {
+  const el = document.createElement('div');
+  el.className = 'stkr';
+
+  
+  const img = document.createElement('img');
+  img.src = s.e;
+  img.style.width = '100px';
+  img.style.height = '100px';
+  img.style.objectFit = 'contain';
+  el.appendChild(img);
+
+  const p = sp[i % sp.length]; let css = '';
+  if(p.t) css += `top:${p.t};`;
+  if(p.l) css += `left:${p.l};`;
+  if(p.r) css += `right:${p.r};`;
+  css += `--bd:${2 + Math.random()*3}s;--r:${-12 + Math.random()*24}deg;--r2:${-6 + Math.random()*12}deg;animation-delay:${Math.random()*2}s`;
+  el.style.cssText = css;
+
+  el.addEventListener('click', () => {
+    el.style.transform = 'scale(2.2) rotate(20deg)';
+    sh(el);
+    setTimeout(() => el.style.transform = '', 500);
+  });
+
+  se.appendChild(el);
+});
+
+function sh(el) {
+  const r = el.getBoundingClientRect();
+  for(let i = 0; i < 6; i++) {
+    const h = document.createElement('div');
+    h.className = 'fheart';
+    h.textContent = '💜';
+    h.style.cssText = `left:${r.left + Math.random()*40}px;top:${r.top}px`;
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 3000);
+  }
+}
+
+// رهومتي 
+let go=false;
+function openGift(){
+  if(go)return;go=true;
+  const box=document.getElementById('gbox');const card=document.getElementById('crd');
+  gsap.timeline()
+    .to(box,{rotation:-18,duration:.1,yoyo:true,repeat:6})
+    .to(box,{scale:1.35,duration:.25})
+    .to(box,{scale:0,opacity:0,duration:.4,ease:'power2.in'})
+    .call(()=>{
+      card.classList.add('on');
+      gsap.to(card,{opacity:1,scale:1,duration:.9,ease:'back.out(1.7)'});
+      for(let i=0;i<10;i++)setTimeout(()=>ex(Math.random()*innerWidth,Math.random()*innerHeight*.8),i*180);
+    });
+}
+
+//  رهومتي 
+const ob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.12});
+document.querySelectorAll('.fu').forEach(el=>ob.observe(el));
+
+// رهومتي 
+document.addEventListener('click',e=>{if(!e.target.closest('#gbox')&&!e.target.closest('.stkr'))ex(e.clientX,e.clientY)});
+</script>
+</body>
+</html>
